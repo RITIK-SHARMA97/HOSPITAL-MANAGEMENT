@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Table(
-        name = "patient_tbl",
+        name = "patient",
         uniqueConstraints = {
                 @UniqueConstraint(name = "unique_patient_email", columnNames = {"email"}),
                 @UniqueConstraint(name = "unique_patient_name_birthdate", columnNames =  { "name","birthDate"})
@@ -34,7 +34,7 @@ public class Patient {
     private Long id;
 
 
-    @Column(name = "patient_name" , nullable = false,length = 40)
+    @Column( nullable = false,length = 40)
     private String name;
 
     @ToString.Exclude
@@ -49,6 +49,8 @@ public class Patient {
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;
+
+    private String bloodGroup;
 
 
 
