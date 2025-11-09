@@ -1,6 +1,7 @@
 package com.ritik.HOSPITAL.MANAGEMENT;
 
 import com.ritik.HOSPITAL.MANAGEMENT.ENTITY.Patient;
+import com.ritik.HOSPITAL.MANAGEMENT.ENTITY.TYPE.BloodGroupType;
 import com.ritik.HOSPITAL.MANAGEMENT.REPOSITORY.PatientRepository;
 import com.ritik.HOSPITAL.MANAGEMENT.SERVICE.PatientService;
 import org.junit.jupiter.api.Test;
@@ -31,9 +32,17 @@ public class PatientTests {
     @Test
 
     public void testTransactionMethods(){
-        Patient patient =patientService.getPatientById(1L);
-        System.out.println(patient);
+//        Patient patient =patientService.getPatientById(1L);
+//        System.out.println(patient);
 
+//        List<Patient> patientList =patientRepository.findByBirthDateOrEmail(LocalDate.of(2004,05,04),"hey@gmail.com");
+
+//        Patient patient= patientRepository.findByName("hello");
+
+        List<Patient> patientList =patientRepository.findByBloodGroup(BloodGroupType.A_POSITIVE);
+        for (Patient patient : patientList) {
+            System.out.println(patient);
+        }
     }
 
 }

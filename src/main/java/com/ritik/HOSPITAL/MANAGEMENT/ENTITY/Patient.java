@@ -1,6 +1,7 @@
 package com.ritik.HOSPITAL.MANAGEMENT.ENTITY;
 
 
+import com.ritik.HOSPITAL.MANAGEMENT.ENTITY.TYPE.BloodGroupType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,7 +38,7 @@ public class Patient {
     @Column( nullable = false,length = 40)
     private String name;
 
-    @ToString.Exclude
+//    @ToString.Exclude
     private LocalDate birthDate;
 
     @Column(unique = true,nullable = false)
@@ -50,7 +51,9 @@ public class Patient {
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    private String bloodGroup;
+
+    @Enumerated(EnumType.STRING)
+    private BloodGroupType bloodGroup;
 
 
 
