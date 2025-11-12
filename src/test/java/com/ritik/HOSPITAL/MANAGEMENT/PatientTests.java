@@ -26,11 +26,11 @@ public class PatientTests {
 
     @Test
      public void testPatientRepository(){
-       List<Patient> patientList= patientRepository.findAll();
+       List<Patient> patientList= patientRepository.findAllPatientWithAppointment();
         System.out.println(patientList);
 
-        Patient p1 = new Patient();
-        patientRepository.save(p1);
+//        Patient p1 = new Patient();
+//        patientRepository.save(p1);
 
     }
 

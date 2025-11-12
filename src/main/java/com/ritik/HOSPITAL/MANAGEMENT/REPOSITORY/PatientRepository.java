@@ -37,4 +37,7 @@ Page<Patient> findAllPatients(Pageable pageable);
 @Modifying
 @Query("UPDATE Patient p SET p.name =:name where p.id = :id")
 int updateNameWithId(@Param("name")String name, @Param("id") Long id);
+
+@Query("SELECT p FROM Patient p LEFT JOIN FETCH p.appointments ")
+List<Patient> findAllPatientWithAppointment();
 }
