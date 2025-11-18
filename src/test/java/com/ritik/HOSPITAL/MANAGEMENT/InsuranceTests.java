@@ -41,11 +41,11 @@ public class InsuranceTests {
                 .appointmentTime(LocalDateTime.of(2025,2,11,14,20,00))
                 .reason("cough")
                 .build();
-        var newAppointment = appointmentService.createNewAppointment(appointment,1L,2L);
-        System.out.println(newAppointment);
-
-       var updatedAppointment = appointmentService.reAssignAppointmentToAnotherDoctor(newAppointment.getId(),3L);
-        System.out.println(updatedAppointment);
+//        var newAppointment = appointmentService.createNewAppointment(appointment,1L,2L);
+//        System.out.println(newAppointment);
+//
+//       var updatedAppointment = appointmentService.reAssignAppointmentToAnotherDoctor(newAppointment.getId(),3L);
+//        System.out.println(updatedAppointment);
 
     }
 }

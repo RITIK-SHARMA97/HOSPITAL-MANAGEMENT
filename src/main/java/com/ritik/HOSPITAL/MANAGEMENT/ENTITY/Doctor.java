@@ -20,6 +20,10 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name ="user_id",nullable = false)
+    private User user;
+
     @Column(nullable = false,length=100)
     private String name;
 
